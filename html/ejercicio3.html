@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo en clase</title>
-
+    <title>ejercicio3</title>
     <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/recursos/css/ejercicio1.css">
-
 </head>
 
 <body>
@@ -36,42 +34,38 @@
         </div>
     </nav>
     <div class="row text-center mt-4 d-flex justify-content-center">
-        <h1>Metodos array en Javascript</h1>
-        <div class="curso_contenedor col-9">
-            <div>
-                <h1>map()</h1>
-            </div>
-            <div>
-                <h5>Permite recorrer el array y modificar los elementos presentes en él, retornando un nuevo array con
-                    la misma longitud que el original.</h5>
-            </div>
-            <img src="/recursos/img/map.png" alt="">
+        <div class="col-12">
+            <h1> Ejercicio 3 API</h1>
         </div>
         <div class="curso_contenedor col-9">
             <div>
-                <h1>concat()</h1>
+                <h1>API</h1>
             </div>
             <div>
-                <h5>Se utiliza para unir dos o más arrays. Este método no cambia los arrays existentes, sino que
-                    devuelve un nuevo array.</h5>
+                <h5>Una API ​ es una pieza de código que permite a diferentes aplicaciones comunicarse entre sí y
+                    compartir información y funcionalidades</h5>
             </div>
-            <img src="/recursos/img/concat.png" alt="">
-        </div>
-        <div class="curso_contenedor col-9">
-            <div>
-                <h1>includes()</h1>
-            </div>
-            <div>
-                <h5>Determina si un array incluye un determinado elemento y retorna un booleano según corresponda.</h5>
-            </div>
-            <img src="/recursos/img/includes.png" alt="">
+            <button class="btn-primary btn mt-3 " onclick="Mostrar()">Mostrar respuesta</button>
+            <h2 id="verapi"></h2>
         </div>
     </div>
 
-
-
-
 </body>
-<script src="/css/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    function Mostrar() {
+        fetch('https://randomuser.me/api/?nat=es')
+            .then(response => response.json())
+            .then(data => {
+                const user = data.results[0];
+                const userInfo = `
+            Nombre: ${user.name.first} ${user.name.last}
+            Email: ${user.email}
+            Ubicación: ${user.location.city}, ${user.location.country}
+        `;
+                document.getElementById('verapi').textContent = userInfo;
+            });
+    }
+
+</script>
 
 </html>

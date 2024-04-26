@@ -28,7 +28,7 @@
                         <a class="nav-link" href="/html/ejercicio2.html">Ejercicio 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ejercicio 3</a>
+                        <a class="nav-link" href="/html/ejercicio3.html">Ejercicio 3</a>
                     </li>
                 </ul>
             </div>
@@ -49,28 +49,44 @@
     <script>
         const users = [
             {
-                name: 'Cristiano Ronaldo',
-                avatar: './img/cristiano.webp',
+                name: 'Rebeca Marcela',
+                avatar: '/recursos/img/rebeca.jpg',
             },
             {
                 name: 'Leonel Messi',
-                avatar: './img/messi.jpg',
+                avatar: '/recursos/img/messi.jpg',
             },
             {
-                name: 'Roberto Carlos',
-                avatar: './img/roberto.webp',
+                name: 'Paulo Londra',
+                avatar: '/recursos/img/paulo.jpg',
             },
             {
-                name: 'Ronaldo',
-                avatar: './img/ronaldo.jpg',
+                name: 'Pedri',
+                avatar: '/recursos/img/pedri.jpg',
             },
             {
-                name: 'Iker Casillas',
-                avatar: './img/casillas.webp',
+                name: 'Jake',
+                avatar: '/recursos/img/jake.jpg',
             },
             {
-                name: 'Sergio Ramos',
-                avatar: './img/ramos.webp',
+                name: 'Mingo',
+                avatar: '/recursos/img/mingo.jpg',
+            },
+            {
+                name: 'FCBarcelona',
+                avatar: '/recursos/img/fcbarcelona.png',
+            },
+            {
+                name: 'Futbol',
+                avatar: '/recursos/img/futbol.jpg',
+            },
+            {
+                name: 'Spiderman',
+                avatar: '/recursos/img/spiderman.jpg',
+            },
+            {
+                name: 'Flash',
+                avatar: '/recursos/img/flash.jpg',
             },
         ];
 
@@ -80,8 +96,11 @@
         // Mapear cada usuario a un elemento HTML de card de Bootstrap
         const userCards = users.map(user => `
   <div class="col-md-4 mb-4">
-    <div class="card">
-      <img src="${user.avatar}" class="" alt="${user.name}" width="100">
+    <div class="card d-flex justify-content-center">
+        <div class="col-12">
+            <h5 class="card-title">${user.name}</h5>
+            <img src="${user.avatar}" class="" alt="" width="100">
+        </div>
       <div class="card-body">
         <h5 class="card-title">${user.name}</h5>
       </div>
